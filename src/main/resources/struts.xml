@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <!-- default values:  http://struts.apache.org/2.1.6/docs/strutsproperties.html -->
+    <package name="default" namespace="/" extends="struts-default">
+        <result-types>
+            <result-type name="freemarker" class="org.apache.struts2.views.freemarker.FreemarkerResult" default="true"/>
+        </result-types>
+
+        <interceptors>
+            <interceptor-stack name="uploadStack">
+                <interceptor-ref name="fileUpload">
+                    <param name="maximumSize">104857600</param>
+                </interceptor-ref>
+                <interceptor-ref name="i18nStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="i18nStack"/>
+        <default-action-ref name="parser"/>
+        <default-class-ref class="org.gbif.nameparser.action.SimpleAction" />
+
+        <action name="parser" class="org.gbif.nameparser.action.ParserAction">
+            <interceptor-ref name="uploadStack"></interceptor-ref>
+            <result name="input">/WEB-INF/pages/parser.ftl</result>
+            <result>/WEB-INF/pages/result.ftl</result>
+        </action>
+        <action name="api">
+            <result>/WEB-INF/pages/api.ftl</result>
+        </action>
+
+    </package>
+
+</struts>
