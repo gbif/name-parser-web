@@ -204,7 +204,7 @@
 
   <profiles>
     <profile>
-      <id>prod</id>
+      <id>tools</id>
       <properties>
         <baseURL>http://tools.gbif.org/nameparser</baseURL>
         <parser.url>http://apps.gbif.org:8080/b_checklistbank-ws/parser/name</parser.url>
