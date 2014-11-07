@@ -42,6 +42,6 @@ public class NameParserClient {
     return res
       .accept(MediaType.APPLICATION_JSON)
       .type(MediaType.TEXT_PLAIN)
-      .post(tNames, text);
+      .post(tNames, text.getBytes(UTF8));
   }
 }
