@@ -27,7 +27,7 @@
 
   <properties>
     <baseURL>http://localhost:7001/nameparser</baseURL>
-    <parser.url>http://apps.gbif.org:8080/b_checklistbank-ws/parser/name</parser.url>
+    <parser.url>http://api.gbif.org/v1/parser/name</parser.url>
 
     <!-- Dependency versions -->
     <commons-io.version>2.4</commons-io.version>
@@ -207,7 +207,7 @@
       <id>tools</id>
       <properties>
         <baseURL>http://tools.gbif.org/nameparser</baseURL>
-        <parser.url>http://apps.gbif.org:8080/b_checklistbank-ws/parser/name</parser.url>
+        <parser.url>http://api.gbif.org/v1/parser/name</parser.url>
       </properties>
     </profile>
 

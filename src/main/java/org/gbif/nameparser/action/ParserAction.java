@@ -18,8 +18,6 @@ public class ParserAction extends SimpleAction {
   private String text;
   // file upload
   private File file;
-  private String fileContentType;
-  private String fileFileName;
   // results
   private List<ParsedName> names = Lists.newArrayList();
   private int numParsed = 0;
@@ -32,7 +30,7 @@ public class ParserAction extends SimpleAction {
     if (file != null) {
       // parse names in uploaded document
       log.info("Parsing names from file");
-      names = parser.parse(file, fileFileName, fileContentType);
+      names = parser.parse(file);
       count();
       return SUCCESS;
 
@@ -51,14 +49,6 @@ public class ParserAction extends SimpleAction {
 
   public File getFile() {
     return file;
-  }
-
-  public String getFileContentType() {
-    return fileContentType;
-  }
-
-  public String getFileFileName() {
-    return fileFileName;
   }
 
   public List<ParsedName> getNames() {
@@ -110,14 +100,6 @@ public class ParserAction extends SimpleAction {
 
   public void setFile(File file) {
     this.file = file;
-  }
-
-  public void setFileContentType(String fileContentType) {
-    this.fileContentType = fileContentType;
-  }
-
-  public void setFileFileName(String fileFileName) {
-    this.fileFileName = fileFileName;
   }
 
   public void setText(String text) {
