@@ -215,7 +215,7 @@
       <id>dev</id>
       <properties>
         <baseURL>http://apps.gbif-dev.org:8080/name-parser-web/</baseURL>
-        <parser.url>http://apps.gbif-dev.org:8080/checklistbank-ws/parser/name</parser.url>
+        <parser.url>http://api.gbif-dev.org/v1/parser/name</parser.url>
       </properties>
     </profile>
   </profiles>
