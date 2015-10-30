@@ -27,9 +27,8 @@ $(document).ready(function() {
 [#assign menu = "parser"]
 [#include "/WEB-INF/pages/inc/menu.ftl"/]
 
-
 <h1>Parsed Names</h1>
-<p>${numParsed} name parsed. ${numWellformed} wellformed, ${numHybrid} hybrid formulas and ${numDoubtful} doubtful names.
+<p>${numParsed} name parsed. ${numScientific} scientific, ${numHybrid} hybrid formulas and ${numDoubtful} doubtful names.
 See legend for <a href="#legend">parsing types</a>.</p>
 
 <p><a id="toggleExtended" href="#">Show</a> extended parsing</p>
@@ -86,13 +85,15 @@ See legend for <a href="#legend">parsing types</a>.</p>
 <a name="legend"></a>
 <h2>Parser Result Types</h2>
 <dl>
-	<dt>sciname</dt><dd>a scientific name which is not well formed</dd>
-	<dt>wellformed</dt><dd>a well formed scientific name according to present nomenclatural rules </dd>
-	<dt>doubtful</dt><dd>doubtful whether this is a scientific name at all</dd>
-	<dt>blacklisted</dt><dd>surely not a scientific name</dd>
-	<dt>virus</dt><dd>a virus name</dd>
-	<dt>hybrid</dt><dd>a hybrid *formula* (not a hybrid name)</dd>
-	<dt>informal</dt><dd>a scientific name with some informal addition like &quot;cf.&quot;</dd>
+  <dt>SCIENTIFIC</dt><dd>A scientific Latin name that might contain authorship but is not any of the other name types below (virus, hybrid, cultivar, etc).</dd>
+  <dt>VIRUS</dt><dd>A virus name.</dd>
+  <dt>HYBRID</dt><dd>A hybrid <b>formula</b> (not a hybrid name).</dd>
+  <dt>INFORMAL</dt><dd>A scientific name with some informal addition like "cf." or indetermined like Abies spec.</dd>
+  <dt>CULTIVAR</dt><dd>A cultivated plant name.</dd>
+  <dt>CANDIDATUS</dt><dd>A component of the taxonomic name for a bacterium that cannot be maintained in a Bacteriology Culture Collection.</dd>
+  <dt>DOUBTFUL</dt><dd>Doubtful whether this is a scientific name at all.</dd>
+  <dt>PLACEHOLDER</dt><dd>A placeholder name like "incertae sedis" or "unknown genus".</dd>
+  <dt>NO_NAME</dt><dd>Surely not a scientific name of any kind.</dd>
 </dl>
 
 [#include "/WEB-INF/pages/inc/footer.ftl"/]

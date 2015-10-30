@@ -49,15 +49,17 @@
 			<dt>type</dt>
 			<dd>
 				One of the following:
-				<span class="param">sciname</span> a scientific name which is not well formed; &nbsp;
-				<span class="param">wellformed</span> a well formed scientific name according to present nomenclatural rules;
-				&nbsp;
-				<span class="param">doubtful</span> doubtful whether this is a scientific name at all; &nbsp;
-				<span class="param">blacklisted</span> surely not a scientific name; &nbsp;
-				<span class="param">virus</span> a virus name; &nbsp;
-				<span class="param">hybrid</span> a hybrid *formula* (not a hybrid name). Due to the variable nature of these
-				formulas they are not parsed further; &nbsp;
-				<span class="param">informal</span> a scientific name with some informal addition like "cf.".
+				<dl>
+					<dt>SCIENTIFIC</dt><dd>A scientific Latin name that might contain authorship but is not any of the other name types below (virus, hybrid, cultivar, etc).</dd>
+					<dt>VIRUS</dt><dd>A virus name.</dd>
+					<dt>HYBRID</dt><dd>A hybrid <b>formula</b> (not a hybrid name).</dd>
+					<dt>INFORMAL</dt><dd>A scientific name with some informal addition like "cf." or indetermined like Abies spec.</dd>
+					<dt>CULTIVAR</dt><dd>A cultivated plant name.</dd>
+					<dt>CANDIDATUS</dt><dd>A component of the taxonomic name for a bacterium that cannot be maintained in a Bacteriology Culture Collection.</dd>
+					<dt>DOUBTFUL</dt><dd>Doubtful whether this is a scientific name at all.</dd>
+					<dt>PLACEHOLDER</dt><dd>A placeholder name like "incertae sedis" or "unknown genus".</dd>
+					<dt>NO_NAME</dt><dd>Surely not a scientific name of any kind.</dd>
+				</dl>
 			</dd>
 
 			<dt>authorsParsed</dt>

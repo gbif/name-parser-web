@@ -21,9 +21,16 @@ public class ParserAction extends SimpleAction {
   // results
   private List<ParsedName> names = Lists.newArrayList();
   private int numParsed = 0;
-  private int numWellformed = 0;
-  private int numDoubtful = 0;
+
+  private int numScientific = 0;
+  private int numVirus = 0;
   private int numHybrid = 0;
+  private int numInformal = 0;
+  private int numCultivar = 0;
+  private int numCandidatus = 0;
+  private int numDoubtful = 0;
+  private int numPlaceholder = 0;
+  private int numNoName = 0;
 
   @Override
   public String execute() throws IOException {
@@ -55,20 +62,44 @@ public class ParserAction extends SimpleAction {
     return names;
   }
 
-  public int getNumDoubtful() {
-    return numDoubtful;
+  public int getNumParsed() {
+    return numParsed;
+  }
+
+  public int getNumScientific() {
+    return numScientific;
+  }
+
+  public int getNumVirus() {
+    return numVirus;
   }
 
   public int getNumHybrid() {
     return numHybrid;
   }
 
-  public int getNumParsed() {
-    return numParsed;
+  public int getNumInformal() {
+    return numInformal;
   }
 
-  public int getNumWellformed() {
-    return numWellformed;
+  public int getNumCultivar() {
+    return numCultivar;
+  }
+
+  public int getNumCandidatus() {
+    return numCandidatus;
+  }
+
+  public int getNumDoubtful() {
+    return numDoubtful;
+  }
+
+  public int getNumPlaceholder() {
+    return numPlaceholder;
+  }
+
+  public int getNumNoName() {
+    return numNoName;
   }
 
   public String getText() {
@@ -83,16 +114,40 @@ public class ParserAction extends SimpleAction {
       numParsed++;
       switch (pn.getType()) {
 
+        case SCIENTIFIC:
+          numScientific++;
+          break;
+
+        case VIRUS:
+          numVirus++;
+          break;
+
         case HYBRID:
           numHybrid++;
+          break;
+
+        case INFORMAL:
+          numInformal++;
+          break;
+
+        case CULTIVAR:
+          numCultivar++;
+          break;
+
+        case CANDIDATUS:
+          numCandidatus++;
           break;
 
         case DOUBTFUL:
           numDoubtful++;
           break;
 
-        case WELLFORMED:
-          numWellformed++;
+        case PLACEHOLDER:
+          numPlaceholder++;
+          break;
+
+        case NO_NAME:
+          numNoName++;
           break;
       }
     }
