@@ -1,10 +1,12 @@
 package org.gbif.nameparser.guice;
 
 import org.gbif.nameparser.filter.CharsetFilter;
-import org.gbif.ws.util.PropertiesUtil;
+import org.gbif.utils.file.properties.PropertiesUtil;
 
+import java.io.IOException;
 import java.util.Properties;
 
+import com.google.common.base.Throwables;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
@@ -32,7 +34,12 @@ public class GuiceListener extends GuiceServletContextListener {
 
   @Override
   public Injector getInjector() {
-    Properties props = PropertiesUtil.readFromClasspath("application.properties");
-    return Guice.createInjector(new Struts2GuicePluginModule(), sm, new GuiceModule(props));
+      Properties props = null;
+      try {
+          props = PropertiesUtil.loadProperties("application.properties");
+      } catch (IOException e) {
+          Throwables.propagate(e);
+      }
+      return Guice.createInjector(new Struts2GuicePluginModule(), sm, new GuiceModule(props));
   }
 }
