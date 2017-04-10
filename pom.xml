@@ -29,19 +29,19 @@
     <parser.url>http://api.gbif.org/v1/parser/name</parser.url>
 
     <!-- Dependency versions -->
-    <commons-io.version>2.4</commons-io.version>
-    <commons-lang.version>3.3.1</commons-lang.version>
+    <commons-io.version>2.5</commons-io.version>
+    <commons-lang.version>3.5</commons-lang.version>
     <findbugs-jsr305.version>1.3.9</findbugs-jsr305.version>
-    <gbif-common-ws>0.25</gbif-common-ws>
-    <gbif-api>0.29</gbif-api>
+    <gbif-common-ws>0.37</gbif-common-ws>
+    <gbif-api>0.51</gbif-api>
     <guava.version>18.0</guava.version>
     <guice.version>4.0</guice.version>
     <jettyVersion>6.1.26</jettyVersion>
     <junit.version>4.12</junit.version>
-    <logback.version>1.1.3</logback.version>
-    <slf4j.version>1.7.12</slf4j.version>
+    <logback.version>1.2.3</logback.version>
+    <slf4j.version>1.7.25</slf4j.version>
     <servlet-api.version>2.5</servlet-api.version>
-    <struts2.version>2.3.24.1</struts2.version>
+    <struts2.version>2.3.32</struts2.version>
   </properties>
 
   <build>
