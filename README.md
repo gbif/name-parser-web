@@ -1,10 +1,10 @@
-# GBIF Name Parser Web Frontend
-
-Name parser web frontend using Struts.
-
 # DEPRECATION WARNING
 **This project has been discontinued and a name parser frontend is now part of the main [GBIF portal](https://www.gbif.org/tools/name-parser)!***
 
+
+
+# GBIF Name Parser Web Frontend
+Name parser web frontend using Struts.
 
 # Building
 
